@@ -1,0 +1,13 @@
+services:
+  api:
+    image: llm-skills-poc-api
+    build:
+      context: .
+    environment:
+      PORT: "3000"
+      SKILLS_PROJECT_ROOT: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./skills:/app/skills
+      - ./.data:/app/.data

@@ -1,0 +1,36 @@
+{
+  "name": "llm-skills-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/skill-spec",
+    "packages/skill-runner",
+    "apps/api",
+    "apps/mcp-server"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @llm-skills-poc/skill-spec && npm run build --workspace @llm-skills-poc/skill-runner && npm run build --workspace @llm-skills-poc/api && npm run build --workspace @llm-skills-poc/mcp-server",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev:api": "tsx apps/api/src/index.ts",
+    "dev:mcp": "tsx apps/mcp-server/src/index.ts",
+    "start:api": "node apps/api/dist/index.js",
+    "start:mcp": "node apps/mcp-server/dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "express": "5.2.1",
+    "yaml": "2.9.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^22.15.0",
+    "@types/supertest": "^6.0.3",
+    "supertest": "7.2.2",
+    "tsx": "4.22.4",
+    "typescript": "6.0.3",
+    "vitest": "4.1.8"
+  }
+}

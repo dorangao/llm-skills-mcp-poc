@@ -1,0 +1,14 @@
+{
+  "name": "@llm-skills-poc/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@llm-skills-poc/skill-runner": "0.1.0",
+    "@llm-skills-poc/skill-spec": "0.1.0"
+  }
+}

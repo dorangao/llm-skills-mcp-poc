@@ -1,0 +1,13 @@
+{
+  "name": "basic risk",
+  "inputs": {
+    "repo": "checkout-service",
+    "diff": "diff --git a/src/cart.ts b/src/cart.ts\n+export function formatCart(items: Item[]) {\n+  return items.map(item => item.name).join(', ');\n+}",
+    "risk_level": "low"
+  },
+  "expected": {
+    "deployment_risk": "medium",
+    "includes_suggestions": ["Validate empty inputs"],
+    "includes_tests": ["Add tests"]
+  }
+}

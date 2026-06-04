@@ -1,0 +1,13 @@
+{
+  "name": "missing tests",
+  "inputs": {
+    "repo": "checkout-service",
+    "diff": "diff --git a/src/payment.ts b/src/payment.ts\n+export async function authorizePayment(card: Card) {\n+  return paymentGateway.charge(card);\n+}",
+    "risk_level": "medium"
+  },
+  "expected": {
+    "deployment_risk": "high",
+    "includes_suggestions": ["Payment or authorization logic changed"],
+    "includes_tests": ["Add tests"]
+  }
+}
